@@ -17,7 +17,8 @@ import java.io.IOException;
 public class ClarifaeConfig {
     private static final String TAG = "ClarifaeConfig";
 
-    public static final String PRIMARY_CONF_PATH = "/data/misc/clarifae/config.conf";
+    public static final String PRIMARY_CONF_PATH = "/data/data/org.rising.clarifae/files/config.conf";
+    public static final String APP_DE_CONF_PATH = "/data/user_de/0/org.rising.clarifae/files/config.conf";
     public static final String VENDOR_CONF_PATH = "/data/vendor/clarifae/config.conf";
     public static final String ADB_CONF_PATH = "/data/adb/clarifae/config.conf";
     public static final String VENDOR_ETC_CONF_PATH = "/vendor/etc/clarifae/config.conf";
@@ -125,9 +126,10 @@ public class ClarifaeConfig {
     public boolean save() {
         String confContent = buildConfigString();
 
-        // Write to writable paths
+        // Write to writable paths (primary app data, DE storage, vendor, adb)
         boolean written = false;
         written |= writeToFile(PRIMARY_CONF_PATH, confContent);
+        written |= writeToFile(APP_DE_CONF_PATH, confContent);
         written |= writeToFile(VENDOR_CONF_PATH, confContent);
         if (new File("/data/adb").exists()) {
             written |= writeToFile(ADB_CONF_PATH, confContent);
@@ -190,7 +192,7 @@ public class ClarifaeConfig {
             Log.i(TAG, "Config written successfully to " + path);
             return true;
         } catch (Exception e) {
-            Log.w(TAG, "Could not write to " + path + ": " + e.getMessage());
+            Log.d(TAG, "Path " + path + " not accessible for write: " + e.getMessage());
             return false;
         }
     }
@@ -235,7 +237,7 @@ public class ClarifaeConfig {
     }
 
     private static File findConfigFile() {
-        String[] paths = {PRIMARY_CONF_PATH, VENDOR_CONF_PATH, ADB_CONF_PATH, VENDOR_ETC_CONF_PATH};
+        String[] paths = {PRIMARY_CONF_PATH, APP_DE_CONF_PATH, VENDOR_CONF_PATH, ADB_CONF_PATH, VENDOR_ETC_CONF_PATH};
         for (String p : paths) {
             File f = new File(p);
             if (f.exists() && f.isFile()) {

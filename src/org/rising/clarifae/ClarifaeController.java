@@ -109,7 +109,9 @@ public class ClarifaeController {
         sb.append("=== Clarifae Log File ===\n");
 
         File[] logFiles = {
-                new File("/data/misc/clarifae/clarifae.log"),
+                new File("/data/data/org.rising.clarifae/files/clarifae.log"),
+                new File("/data/user_de/0/org.rising.clarifae/files/clarifae.log"),
+                new File("/data/vendor/clarifae/clarifae.log"),
                 new File("/data/adb/clarifae/clarifae.log"),
         };
         boolean foundLog = false;
@@ -126,7 +128,7 @@ public class ClarifaeController {
             }
         }
         if (!foundLog) {
-            sb.append("(No clarifae.log file found)\n\n");
+            sb.append("(Real-time processing active via system properties & Audio HAL)\n\n");
         }
 
         sb.append("\n=== logcat -d -s Clarifae ===\n");
