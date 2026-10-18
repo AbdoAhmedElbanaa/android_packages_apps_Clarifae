@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TableLayout;
@@ -323,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupChipListeners() {
-        Chip.OnCheckedChangeListener chipListener = (buttonView, isChecked) -> {
+        CompoundButton.OnCheckedChangeListener chipListener = (buttonView, isChecked) -> {
             collectChipSelections();
             saveCurrentConfig();
         };
