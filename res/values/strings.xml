@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Clarifae</string>
+    <string name="app_title">AI Voice Clarity</string>
+    <string name="tagline">Real-time AI audio clarity</string>
+    <string name="tile_label">Voice Clarity</string>
+
+    <!-- Master Switch -->
+    <string name="master_title">Clarity engine</string>
+    <string name="master_sub_default">Clean your microphone and the audio you hear, in real time.</string>
+    <string name="master_sub_active">Active — cleaning your microphone.</string>
+    <string name="master_sub_paused">Paused. Toggle on to clean your microphone.</string>
+
+    <!-- What to Clean -->
+    <string name="section_what_to_clean">What to clean</string>
+    <string name="in_enabled_title">Microphone (input)</string>
+    <string name="in_enabled_summary">Cleans your outgoing voice on calls &amp; recordings.</string>
+    <string name="out_enabled_title">Playback (output)</string>
+    <string name="out_enabled_summary">Cleans the audio you hear from the speaker/headphones.</string>
+
+    <!-- Modes -->
+    <string name="section_modes">Clarity mode</string>
+    <string name="mode_1_name">Low latency</string>
+    <string name="mode_1_pill">RNNoise</string>
+    <string name="mode_1_desc">Compact RNN denoiser. Lowest CPU and delay — best for calls and always-on mic.</string>
+
+    <string name="mode_2_name">Balanced</string>
+    <string name="mode_2_pill">DTLN</string>
+    <string name="mode_2_desc">Dual-signal LSTM. Stronger denoising. Experimental — needs DTLN models.</string>
+
+    <string name="mode_3_name">Maximum clarity</string>
+    <string name="mode_3_pill">DeepFilterNet</string>
+    <string name="mode_3_desc">Full-band 48 kHz enhancement. Highest quality. Experimental — needs libdf + model.</string>
+
+    <string name="hint_fallback_dtln">DTLN models not installed — Clarifae will fall back to RNNoise.</string>
+    <string name="hint_fallback_df">DeepFilterNet (libdf/model) not installed — Clarifae will fall back to RNNoise.</string>
+
+    <!-- Tuning -->
+    <string name="section_tuning">Tuning</string>
+    <string name="strength_title">Microphone strength</string>
+    <string name="strength_help">How much of the cleaned mic signal to blend in (wet/dry).</string>
+    <string name="out_strength_title">Playback strength</string>
+    <string name="out_strength_help">Blend for output cleanup. These are speech models — lower this if music sounds over-processed.</string>
+    <string name="atten_db_title">Max suppression</string>
+    <string name="atten_db_help">Caps how aggressively noise is attenuated (protects natural tone).</string>
+    <string name="vad_title">Voice gate</string>
+    <string name="vad_help">Voice-activity sensitivity used for gating and auto-gain.</string>
+    <string name="highpass_title">High-pass filter</string>
+    <string name="highpass_help">Removes DC offset and low rumble.</string>
+    <string name="autogain_title">Auto gain</string>
+    <string name="autogain_help">Gently boosts quiet speech (may pump in noise).</string>
+
+    <!-- Capture sources -->
+    <string name="section_capture_sources">Microphone — capture sources</string>
+    <string name="target_mic">Microphone</string>
+    <string name="target_voice_comm">Calls / VoIP</string>
+    <string name="target_camcorder">Camcorder</string>
+    <string name="target_voice_rec">Voice rec.</string>
+    <string name="hint_capture">Routing applies to capture sessions and when audio service reloads.</string>
+
+    <!-- Playback streams -->
+    <string name="section_playback_streams">Playback — output streams</string>
+    <string name="otarget_music">Media / music</string>
+    <string name="otarget_voice_call">Calls</string>
+    <string name="otarget_ring">Ring</string>
+    <string name="otarget_alarm">Alarm</string>
+    <string name="otarget_notification">Notifications</string>
+    <string name="otarget_system">System</string>
+    <string name="hint_playback">⚠ These are speech-enhancement models. On Media/music they clean speech in videos/podcasts but degrade actual music — use Playback strength to taste.</string>
+
+    <!-- Actions -->
+    <string name="btn_apply">Apply</string>
+    <string name="btn_restart">Restart audio</string>
+    <string name="btn_log">View log</string>
+    <string name="btn_reset">Reset</string>
+
+    <string name="toast_applied">Settings applied successfully to config &amp; audio HAL</string>
+    <string name="toast_restarted">Audio service restart requested</string>
+    <string name="toast_reset">Reset to default settings</string>
+
+    <!-- Status -->
+    <string name="section_status">Engine status</string>
+    <string name="btn_refresh">Refresh</string>
+    <string name="status_enabled">Enabled</string>
+    <string name="status_in_enabled">Mic cleanup</string>
+    <string name="status_out_enabled">Playback cleanup</string>
+    <string name="status_effect_loaded">Effect loaded</string>
+    <string name="status_xml_patched">audio_effects configured</string>
+    <string name="status_lib64">Library (64-bit)</string>
+    <string name="status_lib32">Library (32-bit)</string>
+    <string name="status_audioserver">audioserver</string>
+    <string name="status_rnnoise">RNNoise</string>
+    <string name="status_dtln">DTLN model</string>
+    <string name="status_df">DeepFilterNet</string>
+
+    <string name="val_yes">Yes</string>
+    <string name="val_no">No</string>
+    <string name="val_loaded">Loaded</string>
+    <string name="val_not_detected">Not detected</string>
+    <string name="val_installed">Installed</string>
+    <string name="val_missing">Missing</string>
+    <string name="val_ready">Ready</string>
+    <string name="val_running">Running</string>
+    <string name="val_stopped">Stopped</string>
+
+    <!-- Dialog / Log -->
+    <string name="dialog_log_title">Clarifae Engine Log</string>
+    <string name="btn_close">Close</string>
+    <string name="footer_text">Clarifae v1.1.2 · RNNoise · DTLN · DeepFilterNet</string>
+</resources>

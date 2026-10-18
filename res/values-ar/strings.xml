@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Clarifae</string>
+    <string name="app_title">نقاء الصوت بالذكاء الاصطناعي</string>
+    <string name="tagline">عزل الضوضاء وتحسين الصوت بالذكاء الاصطناعي في الوقت الفعلي</string>
+    <string name="tile_label">نقاء الصوت</string>
+
+    <!-- Master Switch -->
+    <string name="master_title">محرك نقاء الصوت</string>
+    <string name="master_sub_default">عزل الضوضاء من الميكروفون والصوت المسموع في الوقت الفعلي.</string>
+    <string name="master_sub_active">نشط — يعمل على تنقية صوت الميكروفون بالذكاء الاصطناعي.</string>
+    <string name="master_sub_paused">متوقف مؤقتاً. قم بالتفعيل لتنقية الصوت.</string>
+
+    <!-- What to Clean -->
+    <string name="section_what_to_clean">ما يتم تنقيته</string>
+    <string name="in_enabled_title">الميكروفون (المدخلات)</string>
+    <string name="in_enabled_summary">تنقية صوتك الخارج في المكالمات وتطبيقات التواصل وتسجيل الصوت.</string>
+    <string name="out_enabled_title">الصوت المسموع (المخرجات)</string>
+    <string name="out_enabled_summary">تنقية الصوت القادم من الطرف الآخر عبر سماعة الأذن ومكبر الصوت.</string>
+
+    <!-- Modes -->
+    <string name="section_modes">نمط نقاء الصوت</string>
+    <string name="mode_1_name">تأخير منخفض (Low latency)</string>
+    <string name="mode_1_pill">RNNoise</string>
+    <string name="mode_1_desc">شبكة عصبية متكررة مدمجة. أدنى استهلاك للمعالج وبدون تأخير — الأفضل للمكالمات والميكروفون الدائم.</string>
+
+    <string name="mode_2_name">متوازن (Balanced)</string>
+    <string name="mode_2_pill">DTLN</string>
+    <string name="mode_2_desc">نموذج LSTM ثنائي الإشارة. عزل ضوضاء أقوى. تجريبي — يتطلب نماذج DTLN.</string>
+
+    <string name="mode_3_name">أقصى نقاء (Maximum clarity)</string>
+    <string name="mode_3_pill">DeepFilterNet</string>
+    <string name="mode_3_desc">معالجة كاملة النطاق 48 kHz بأعلى جودة صوتية. تجريبي — يتطلب libdf ونموذج المعالجة.</string>
+
+    <string name="hint_fallback_dtln">نماذج DTLN غير مثبتة — سيعمل Clarifae تلقائياً عبر شبكة RNNoise.</string>
+    <string name="hint_fallback_df">حزمة DeepFilterNet غير مثبتة — سيعمل Clarifae تلقائياً عبر شبكة RNNoise.</string>
+
+    <!-- Tuning -->
+    <string name="section_tuning">الضبط الصوتي الدقيق</string>
+    <string name="strength_title">قوة عزل الميكروفون</string>
+    <string name="strength_help">نسبة دمج إشارة الميكروفون المنقاة بالذكاء الاصطناعي مع الصوت الأصلي (wet/dry).</string>
+    <string name="out_strength_title">قوة عزل الصوت المسموع</string>
+    <string name="out_strength_help">نسبة التنقية للمخرجات. قم بخفضها في حال تأثر صوت الموسيقى.</string>
+    <string name="atten_db_title">الحد الأقصى لكبح الضوضاء</string>
+    <string name="atten_db_help">تحديد سقف خفض الضوضاء لحماية النبرة الطبيعية للصوت البشري.</string>
+    <string name="vad_title">حساسية كاشف النشاط الصوتي (بوابة الصمت)</string>
+    <string name="vad_help">حساسية كشف الصوت البشري لكتم الضوضاء أثناء فترات الصمت بين الكلمات.</string>
+    <string name="highpass_title">مرشح الترددات المنخفضة (High-pass)</string>
+    <string name="highpass_help">عزل دمدمة الهواء، صوت الرياح، والترددات المنخفضة جداً دون 80Hz.</string>
+    <string name="autogain_title">التعزيز الصوتي التلقائي (Auto gain)</string>
+    <string name="autogain_help">رفع مستوى الصوت تلقائياً للمتحدثين البعيدين عن الهاتف بهدوء.</string>
+
+    <!-- Capture sources -->
+    <string name="section_capture_sources">الميكروفون — مصادر الالتقاط</string>
+    <string name="target_mic">الميكروفون العام</string>
+    <string name="target_voice_comm">المكالمات / VoIP</string>
+    <string name="target_camcorder">تصوير الفيديو</string>
+    <string name="target_voice_rec">تسجيل الصوت</string>
+    <string name="hint_capture">توجيه الصوت يطبق على جلسات التسجيل الجديدة وتطبيقات التواصل بعد تطبيق الإعدادات.</string>
+
+    <!-- Playback streams -->
+    <string name="section_playback_streams">المخرجات — مسارات الاستماع</string>
+    <string name="otarget_music">الموسيقى / الوسائط</string>
+    <string name="otarget_voice_call">المكالمات</string>
+    <string name="otarget_ring">نغمة الرنين</string>
+    <string name="otarget_alarm">المنبه</string>
+    <string name="otarget_notification">الإشعارات</string>
+    <string name="otarget_system">أصوات النظام</string>
+    <string name="hint_playback">⚠ نماذج Clarifae مخصصة لتعزيز الكلام البشري. في الوسائط تعمل على تنقية الحوار والبودكاست. اضبط قوة العزل حسب رغبتك.</string>
+
+    <!-- Actions -->
+    <string name="btn_apply">تطبيق وحفظ</string>
+    <string name="btn_restart">إعادة تشغيل الصوت</string>
+    <string name="btn_log">عرض السجل</string>
+    <string name="btn_reset">استعادة الافتراضي</string>
+
+    <string name="toast_applied">تم تطبيق الإعدادات وحفظها في config.conf والمكتبة بنجاح</string>
+    <string name="toast_restarted">تمت إعادة تشغيل خدمة الصوت وتحديث المسارات</string>
+    <string name="toast_reset">تمت استعادة الإعدادات الافتراضية بنجاح</string>
+
+    <!-- Status -->
+    <string name="section_status">حالة محرك الصوت</string>
+    <string name="btn_refresh">تحديث</string>
+    <string name="status_enabled">المحرك العام</string>
+    <string name="status_in_enabled">تنقية الميكروفون</string>
+    <string name="status_out_enabled">تنقية الاستماع</string>
+    <string name="status_effect_loaded">تحميل التأثير (AudioFlinger)</string>
+    <string name="status_xml_patched">تكوين audio_effects</string>
+    <string name="status_lib64">المكتبة (64-bit)</string>
+    <string name="status_lib32">المكتبة (32-bit)</string>
+    <string name="status_audioserver">خدمة audioserver</string>
+    <string name="status_rnnoise">نموذج RNNoise</string>
+    <string name="status_dtln">نموذج DTLN</string>
+    <string name="status_df">نموذج DeepFilterNet</string>
+
+    <string name="val_yes">نعم</string>
+    <string name="val_no">لا</string>
+    <string name="val_loaded">مُحَمَّل ونشط</string>
+    <string name="val_not_detected">غير مكتشف حالياً</string>
+    <string name="val_installed">مثبت</string>
+    <string name="val_missing">غير مثبت</string>
+    <string name="val_ready">جاهز</string>
+    <string name="val_running">قيد التشغيل</string>
+    <string name="val_stopped">متوقف</string>
+
+    <!-- Dialog / Log -->
+    <string name="dialog_log_title">سجل محرك Clarifae</string>
+    <string name="btn_close">إغلاق</string>
+    <string name="footer_text">Clarifae v1.1.2 · RNNoise · DTLN · DeepFilterNet</string>
+</resources>
